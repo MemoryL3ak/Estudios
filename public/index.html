@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Consulta de visitas</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+  <h1>Consulta de visitas</h1>
+
+  <label for="visitaId">Selecciona un ID:</label>
+  <select id="visitaId">
+    <!-- Agrega una opción predeterminada deshabilitada para indicar la selección -->
+    <option value="" disabled selected>Seleccione un ID</option>
+  </select>
+
+  <div>
+    <p>Nombre: <span id="Nombre"></span></p>
+    <p>Zona: <span id="Zona"></span></p>
+  </div>
+
+  <div>
+    <h2>Hospedajes Disponibles</h2>
+    <form id="hospedajesForm">
+      <div id="hospedajesList">
+        <!-- Las opciones de hospedaje se agregarán aquí dinámicamente -->
+      </div>
+    </form>
+    <button id="asignarVisitaBtn">Asignar visita</button>
+  </div>
+  <div id="mensaje" class="mensaje"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+.mensaje {
+    text-align: left;
+    padding: 5px;
+    margin: 5px;
+  
+    color: #007100;
+    font-weight: bold;
+    display: none;
+  }
+  

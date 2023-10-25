@@ -1,5 +1,5 @@
 .mensaje {
-    text-align: left;
+    text-align: center;
     padding: 5px;
     margin: 5px;
   
@@ -7,4 +7,25 @@
     font-weight: bold;
     display: none;
   }
-  
+  body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+label {
+    font-weight: bold;
+}
+
+select {
+    width: 200px;
+    margin: 10px;
+}
+
+#info {
+    margin: 20px;
+}

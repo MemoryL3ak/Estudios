@@ -1,18 +1,19 @@
 const express = require('express');
 const { Client } = require('pg');
+const pgp = require('pg-promise');
+ssl: true; // Habilitar SSL
 const path = require('path');
 const bodyParser = require('body-parser'); // Agregamos body-parser para manejar datos POST
-
+require('dotenv').config();
 const app = express();
 const port = 3000;
 
 const dbConfig = {
-  user: 'postgres',
-  host: 'localhost',
-  database: 'estudios',
-  password: 'ariel579',
-  port: 5432,
-};
+  connectionString: process.env.DATABASE_URL,
+  ssl:{ // Habilitar SSL
+  rejectUnauthorized: false, // Ajusta esto según la configuración de tu base de datos en Heroku
+}};
+
 
 // Configura Express para servir archivos estáticos desde la carpeta 'public'
 app.use(express.static(path.join(__dirname, 'public')));

@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const zona = document.getElementById('Zona');
   const hospedajesList = document.getElementById('hospedajesList');
   const asignarVisitaBtn = document.getElementById('asignarVisitaBtn');
+ 
+
 
 
   // Llena el select con los IDs de visitas al cargar la página.

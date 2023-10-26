@@ -6,11 +6,11 @@ const path = require('path');
 const bodyParser = require('body-parser'); // Agregamos body-parser para manejar datos POST
 require('dotenv').config();
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
-  ssl:{ // Habilitar SSL
+  ssl:{ 
   rejectUnauthorized: false, // Ajusta esto según la configuración de tu base de datos en Heroku
 }};
 

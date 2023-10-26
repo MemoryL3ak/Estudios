@@ -11,7 +11,7 @@ const port = process.env.PORT || 3000;
 const dbConfig = {
   connectionString: process.env.DATABASE_URL,
   ssl:{ 
-  rejectUnauthorized: false, // Ajusta esto según la configuración de tu base de datos en Heroku
+  rejectUnauthorized: false, 
 }};
 
 
@@ -86,11 +86,27 @@ app.post('/asignar-visita/:visitaId/:hospedajeId', async (req, res) => {
       return;
     }
 
+    // Despues, obtén el nombre de la visita
+    const visitaQuery = 'SELECT "Nombre" FROM visitas WHERE "IDVisita" = $1';
+    const { rows: visitaRows } = await client.query(visitaQuery, [visitaId]);
+
+    if (visitaRows.length === 0) {
+      res.status(404).json({ success: false, message: 'Visita no encontrada.' });
+      return;
+    }
+
     const hospedajeNombre = hospedajeRows[0].Nombre;
+  
+    const visitaNombre = visitaRows[0].Nombre;
+
 
     // Luego, actualiza la visita con el hospedaje asignado
     const asignarVisitaQuery = 'UPDATE visitas SET "Hospedador" = $1 WHERE "IDVisita" = $2';
     await client.query(asignarVisitaQuery, [hospedajeNombre, visitaId]);
+
+    // Ahora, actualiza el campo "Visita" en la tabla "hospedajes" con el valor del campo "Nombre" de la tabla "visitas"
+    const actualizarHospedajeQuery = 'UPDATE hospedajes SET "Visita" = $1 WHERE "IDHospedaje" = $2';
+    await client.query(actualizarHospedajeQuery, [visitaNombre, hospedajeId]);
 
     res.json({ success: true, message: 'Asignación realizada' });
   } catch (error) {

@@ -25,7 +25,7 @@ app.get('/visitas', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const query = 'SELECT "IDVisita", "Nombre", "Zona" FROM visitas';
+    const query = 'SELECT "IDVisita", "Nombre", "Zona", "Hospedador" FROM visitas';
     const { rows } = await client.query(query);
     res.json(rows);
   } catch (error) {
@@ -41,7 +41,7 @@ app.get('/visitas/:id', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const query = 'SELECT "IDVisita", "Nombre", "Zona" FROM visitas WHERE "IDVisita" = $1';
+    const query = 'SELECT "IDVisita", "Nombre", "Zona", "Hospedador" FROM visitas WHERE "IDVisita" = $1';
     const { rows } = await client.query(query, [id]);
     res.json(rows);
   } catch (error) {

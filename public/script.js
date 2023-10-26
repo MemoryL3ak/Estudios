@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const visitaId = document.getElementById('visitaId');
   const nombre = document.getElementById('Nombre');
   const zona = document.getElementById('Zona');
+  const hospedador = document.getElementById('Hospedador');
   const hospedajesList = document.getElementById('hospedajesList');
   const asignarVisitaBtn = document.getElementById('asignarVisitaBtn');
  
@@ -15,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       data.forEach((visita) => {
         const option = document.createElement('option');
         option.value = visita.IDVisita;
-        option.text = visita.IDVisita;
+        option.text = `${visita.IDVisita} - ${visita.Nombre}`;
         visitaId.appendChild(option);
       });
     });
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const visita = data[0];
             nombre.textContent = visita.Nombre;
             zona.textContent = visita.Zona;
+            hospedador.textContent = visita.Hospedador;
 
             // Una vez que tienes la "Zona" de la visita, obtén los hospedajes disponibles para esa "Zona".
             fetch(`/hospedajes?zona=${visita.Zona}`)
@@ -61,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
           } else {
             nombre.textContent = '';
             zona.textContent = '';
+            hospedador.textContent = '';
             hospedajesList.innerHTML = '';
           }
         })
@@ -72,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       nombre.textContent = '';
       zona.textContent = '';
+      hospedador.textContent = '';
       hospedajesList.innerHTML = '';
     }
   });

@@ -1,31 +1,80 @@
-.mensaje {
-    text-align: center;
-    padding: 5px;
-    margin: 5px;
-  
-    color: #007100;
-    font-weight: bold;
-    display: none;
+/* Reset de estilos para quitar márgenes y rellenos predeterminados */
+html, body, h1, h2, h3, p, select, button {
+    margin: 0;
+    padding: 0;
   }
+  
+  /* Estilos generales para el cuerpo de la página */
   body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Encabezado de la página */
+  header {
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    margin: 20px;
-}
-
-h1 {
-    font-size: 24px;
-}
-
-label {
+    padding: 1rem;
+  }
+  
+  /* Encabezados de sección */
+  h1, h2, h3 {
+    margin: 1rem 0;
+  }
+  
+  /* Sección de visitas */
+  #visitas-section {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Select de visitas */
+  #visitaId {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  
+  /* Detalles de visita */
+  #visita-details {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Lista de hospedajes */
+  #hospedajesList {
+    margin-top: 1rem;
+  }
+  
+  /* Botón de asignar visita */
+  #asignarVisitaBtn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Mensaje emergente */
+  .mensaje {
+    display: none;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    text-align: center;
+    border: 1px solid #ccc;
+    background-color: #0eda0e;
+    color: #333333;
     font-weight: bold;
-}
-
-select {
-    width: 200px;
-    margin: 10px;
-}
-
-#info {
-    margin: 20px;
-}
+  }
+  

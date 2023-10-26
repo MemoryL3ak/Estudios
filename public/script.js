@@ -94,6 +94,9 @@ asignarVisitaBtn.addEventListener('click', () => {
         if (data.success) {
           // Asignación exitosa, muestra un mensaje
           mostrarMensaje("Asignación realizada");
+          // Actualiza el campo "Hospedador" con el valor asignado
+          actualizarHospedador(selectedVisitaId);
+
           // Actualiza la página para reflejar la asignación.
           //location.reload();
         } else {
@@ -125,3 +128,19 @@ function mostrarMensaje(mensaje, exito) {
   }, 3000); // Ajusta este valor según tus preferencias
 }
 
+
+function actualizarHospedador(visitaId) {
+  // Realiza una solicitud al servidor para obtener el Hospedador actualizado
+  fetch(`/visitas/${visitaId}`)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.length > 0) {
+        const visita = data[0];
+        const hospedadorSpan = document.getElementById('Hospedador');
+        hospedadorSpan.textContent = visita.Hospedador;
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      console.error('Error al obtener el Hospedador actualizado.');
+    })};

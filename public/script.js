@@ -49,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Una vez que tienes la "Zona" de la visita, obtén los hospedajes disponibles para esa "Zona".
             fetch(`/hospedajes?zona=${visita.Zona}`)
-              .then((response) => response.json())
+            .then((response) => response.json())
               .then((hospedajes) => {
-
               // Antes de llenar la lista de hospedadores, limpia las opciones anteriores
               hospedajesList.innerHTML = ''; 
-              // Luego, llena la lista de hospedadores
               hospedajes.forEach((hospedaje) => {
+
+               
                 const radioBtn = document.createElement('input');
                 radioBtn.type = 'radio';
                 radioBtn.name = 'hospedaje';
@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 hospedajesList.appendChild(radioBtn);
                 hospedajesList.appendChild(label);
                 hospedajesList.appendChild(br);
+              
               });
 
               })

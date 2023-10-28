@@ -57,7 +57,7 @@ app.get('/hospedajes', async (req, res) => {
   const client = new Client(dbConfig);
   try {
     await client.connect();
-    const query = 'SELECT "IDHospedaje", "Nombre", "Zona" FROM hospedajes WHERE "Zona" = $1';
+    const query = 'SELECT "IDHospedaje", "Nombre", "Zona" FROM hospedajes WHERE "Zona" = $1 AND "Visita" IS NULL';
     const { rows } = await client.query(query, [zona]);
     res.json(rows);
   } catch (error) {
@@ -103,6 +103,10 @@ app.post('/asignar-visita/:visitaId/:hospedajeId', async (req, res) => {
     // Luego, actualiza la visita con el hospedaje asignado
     const asignarVisitaQuery = 'UPDATE visitas SET "Hospedador" = $1 WHERE "IDVisita" = $2';
     await client.query(asignarVisitaQuery, [hospedajeNombre, visitaId]);
+
+     // Ahora, actualiza todas las filas en la tabla "hospedajes" donde "Visita" coincide con la visita asignada
+     const actualizarHospedajesConVisitaQuery = 'UPDATE hospedajes SET "Visita" = NULL WHERE "Visita" = $1';
+     await client.query(actualizarHospedajesConVisitaQuery, [visitaNombre]);
 
     // Ahora, actualiza el campo "Visita" en la tabla "hospedajes" con el valor del campo "Nombre" de la tabla "visitas"
     const actualizarHospedajeQuery = 'UPDATE hospedajes SET "Visita" = $1 WHERE "IDHospedaje" = $2';

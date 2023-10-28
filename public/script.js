@@ -107,10 +107,26 @@ asignarVisitaBtn.addEventListener('click', () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
-          // Asignación exitosa, muestra un mensaje
-          mostrarMensaje("Asignación realizada");
+
           // Actualiza el campo "Hospedador" con el valor asignado
           actualizarHospedador(selectedVisitaId);
+
+          // Asignación exitosa, muestra un mensaje
+          mostrarMensaje("Asignación realizada");
+
+
+          // Obtiene la zona de la visita seleccionada
+          fetch(`/visitas/${selectedVisitaId}`)
+            .then((response) => response.json())
+            .then((data) => {
+              if (data.length > 0) {
+                const visita = data[0];
+                const selectedZona = visita.Zona;
+
+                // Actualiza el listado de hospedajes disponibles
+                actualizarHospedajesDisponibles(selectedZona);
+              }
+            })
 
           // Actualiza la página para reflejar la asignación.
           //location.reload();
@@ -159,3 +175,38 @@ function actualizarHospedador(visitaId) {
       console.error(error);
       console.error('Error al obtener el Hospedador actualizado.');
     })};
+
+
+
+    function actualizarHospedajesDisponibles(selectedZona) {
+      // Hacer una solicitud al servidor para obtener los hospedajes disponibles
+      fetch(`/hospedajes?zona=${selectedZona}`)
+        .then((response) => response.json())
+        .then((hospedajes) => {
+          // Limpia las opciones anteriores
+          hospedajesList.innerHTML = '';
+    
+          // Llena la lista de hospedajes disponibles
+          hospedajes.forEach((hospedaje) => {
+           
+              const radioBtn = document.createElement('input');
+              radioBtn.type = 'radio';
+              radioBtn.name = 'hospedaje';
+              radioBtn.value = hospedaje.IDHospedaje;
+              const label = document.createElement('label');
+              label.textContent = `${hospedaje.Nombre} (Zona: ${hospedaje.Zona})`;
+              const br = document.createElement('br');
+    
+              hospedajesList.appendChild(radioBtn);
+              hospedajesList.appendChild(label);
+              hospedajesList.appendChild(br);
+            
+          });
+        })
+        .catch((error) => {
+          console.error(error);
+          hospedajesList.innerHTML = '<p>Error al obtener los datos de hospedajes.</p>';
+        });
+    }
+    
+

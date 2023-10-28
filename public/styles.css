@@ -51,14 +51,25 @@ h1, h2, h3 {
 /* Select de visitas */
 #visitaId {
   width: 100%;
-  padding: 0.5rem;
+  padding: 0.7rem;
   margin: 0.5rem 0;
+  font-size: 1rem;
+  font-family: 'Tajawal', sans-serif;
   border: 1px solid #ccc; /* Agregar bordes suaves al listbox */
   border-radius: 10px;
   font-weight: normal; /* Establecer el tipo de letra como no negrita */
   font-family: Arial, sans-serif; /* Cambiar la fuente a Arial */
   font-weight: normal;
 }
+
+#visitaId option {
+  background-color: #fff; /* Fondo blanco */
+  color: #000; /* Texto negro */
+  font-weight: normal; /* Fuente no negrita */
+  font-family: 'Tajawal', sans-serif;
+
+}
+
 
 /* Detalles de visita */
 #visita-details {

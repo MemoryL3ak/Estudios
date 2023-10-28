@@ -33,6 +33,7 @@ h1, h2, h3 {
   margin: 2rem auto;
   padding: 1rem;
   border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
@@ -43,6 +44,7 @@ h1, h2, h3 {
   padding: 0.5rem;
   margin: 0.5rem 0;
   border: 1px solid #ccc; /* Agregar bordes suaves al listbox */
+  border-radius: 10px;
   font-weight: normal; /* Establecer el tipo de letra como no negrita */
   font-family: Arial, sans-serif; /* Cambiar la fuente a Arial */
 }
@@ -53,6 +55,7 @@ h1, h2, h3 {
   padding: 1rem;
   background-color: #f9f9f9;
   border: 1px solid #ccc;
+  border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -81,7 +84,7 @@ h1, h2, h3 {
   margin-top: 1rem;
   text-align: center;
   border: 1px solid #ccc;
-  background-color: #0eda0e;
-  color: #333333;
+  background-color: #86e286;
+  color: #ffffff;
   font-weight: bold;
 }

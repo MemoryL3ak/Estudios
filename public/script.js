@@ -9,17 +9,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-  // Llena el select con los IDs de visitas al cargar la página.
-  fetch('/visitas')
-    .then((response) => response.json())
-    .then((data) => {
-      data.forEach((visita) => {
-        const option = document.createElement('option');
-        option.value = visita.IDVisita;
-        option.text = `${visita.IDVisita} - ${visita.Nombre}`;
-        visitaId.appendChild(option);
+  // Función para cargar las visitas iniciales al listbox y mostrar "Seleccione una visita"
+  const cargarVisitas = () => {
+    fetch('/visitas')
+      .then((response) => response.json())
+      .then((data) => {
+        // Limpia las opciones anteriores, si las hubiera
+        visitaId.innerHTML = '<option value="" disabled selected style="color: #888; font-style: italic;">Seleccione una visita</option>';
+
+        data.forEach((visita) => {
+          const option = document.createElement('option');
+          option.value = visita.IDVisita;
+          option.text = visita.Nombre;
+          visitaId.appendChild(option);
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+        mostrarMensaje('Error al cargar las visitas', false);
       });
-    });
+  };
+  // Cargar visitas al iniciar la página
+  cargarVisitas();
+
 
   // Maneja el evento de selección de un ID.
   visitaId.addEventListener('change', () => {

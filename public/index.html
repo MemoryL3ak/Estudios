@@ -4,17 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Visitas</title>
-  <link rel="stylesheet" href="styles.css"> <!-- Agrega un archivo CSS para estilos -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Agrega un archivo CSS para estilos -->
+  <!-- Asegúrate de que la fuente "Lato" se esté cargando en tu proyecto (por ejemplo, desde Google Fonts) -->
 </head>
 <body>
   <header>
-    <h1>Proyecto de Visitas</h1>
+    <h1 class="title">Proyecto de Visitas</h1>
     <!-- Agrega un menú de navegación si es necesario -->
   </header>
   <main>
     <section id="visitas-section">
       <h2>Visitas</h2>
-      <select id="visitaId"></select>
+      <select id="visitaId" class="listbox"></select>
+      <!-- Aplica el estilo listbox -->
       <div id="visita-details">
         <h3>Detalles de la Visita</h3>
         <p><strong>Nombre:</strong> <span id="Nombre"></span></p>
@@ -25,10 +28,12 @@
           <!-- Hospedajes se llenarán dinámicamente aquí -->
         </div>
       </div>
-      <button id="asignarVisitaBtn">Asignar Visita</button>
+      <button id="asignarVisitaBtn" class="button">Asignar Visita</button>
+      <!-- Agrega la clase "button" para los estilos del botón -->
       <div id="mensaje" class="mensaje"></div>
     </section>
   </main>
-  <script src="script.js"></script> <!-- Agrega el archivo JavaScript -->
+  <script src="script.js"></script>
+  <!-- Agrega el archivo JavaScript -->
 </body>
 </html>

@@ -11,6 +11,7 @@ body {
   margin: 0;
   padding: 0;
   color: #474747;
+  font-weight: normal;
 }
 
 /* Encabezado de la página */
@@ -36,6 +37,7 @@ h1, h2, h3 {
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  font-weight: normal;
 }
 
 /* Select de visitas */
@@ -47,6 +49,7 @@ h1, h2, h3 {
   border-radius: 10px;
   font-weight: normal; /* Establecer el tipo de letra como no negrita */
   font-family: Arial, sans-serif; /* Cambiar la fuente a Arial */
+  font-weight: normal;
 }
 
 /* Detalles de visita */
@@ -57,6 +60,7 @@ h1, h2, h3 {
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-weight: normal;
 }
 
 /* Lista de hospedajes */
@@ -68,7 +72,8 @@ h1, h2, h3 {
 #asignarVisitaBtn {
   background-color: #007bff;
   color: #fff;
-  padding: 0.5rem 1rem;
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
   border: none;
   cursor: pointer;
   margin-top: 2rem; /* Ajustar margen superior para separar del rectángulo de detalles */
@@ -84,7 +89,8 @@ h1, h2, h3 {
   margin-top: 1rem;
   text-align: center;
   border: 1px solid #ccc;
-  background-color: #86e286;
+  background-color: #76e476;
+  border-radius: 10px;
   color: #ffffff;
-  font-weight: bold;
+  font-weight: normal;
 }

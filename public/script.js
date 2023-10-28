@@ -51,8 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
             fetch(`/hospedajes?zona=${visita.Zona}`)
               .then((response) => response.json())
               .then((hospedajes) => {
-                hospedajesList.innerHTML = ''; // Limpia la lista antes de agregar nuevos datos.
 
+              // Antes de llenar la lista de hospedadores, limpia las opciones anteriores
+              hospedajesList.innerHTML = ''; 
+              // Luego, llena la lista de hospedadores
               hospedajes.forEach((hospedaje) => {
                 const radioBtn = document.createElement('input');
                 radioBtn.type = 'radio';

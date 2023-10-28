@@ -1,8 +1,16 @@
-/* Reset de estilos para quitar márgenes y rellenos predeterminados */
-html, body, h1, h2, h3, p, select, button {
-  margin: 0;
-  padding: 0;
+
+
+@media (max-width: 768px) {
+  /* Estilos para pantallas pequeñas */
+  /* Aquí puedes ajustar tamaños de fuente, márgenes y otros estilos para pantallas móviles */
 }
+
+
+/* Aplicar la fuente Tajawal a todos los elementos */
+body, h1, h2, h3, p, select, button {
+  font-family: 'Tajawal', sans-serif;
+}
+
 
 /* Estilos generales para el cuerpo de la página */
 body {
@@ -66,20 +74,22 @@ h1, h2, h3 {
 /* Lista de hospedajes */
 #hospedajesList {
   margin-top: 1rem;
+  font-family: 'Tajawal', sans-serif;
+
 }
 
 /* Botón de asignar visita */
 #asignarVisitaBtn {
   background-color: #007bff;
   color: #fff;
-  padding: 0.7rem 1.5rem;
-  font-size: 1rem;
+  padding: 0.8rem 1.6rem;
+  font-size: 1.1rem;
   border: none;
   cursor: pointer;
   margin-top: 2rem; /* Ajustar margen superior para separar del rectángulo de detalles */
   border-radius: 5px; /* Agregar bordes redondos al botón */
-  font-family: 'Lato', Arial, sans-serif;
-  font-weight: normal; /* Establecer el tipo de letra como no negrita */
+  font-family: 'Tajawal', sans-serif;
+  font-weight: bold; /* Establecer el tipo de letra como no negrita */
 }
 
 /* Mensaje emergente */
@@ -93,4 +103,19 @@ h1, h2, h3 {
   border-radius: 10px;
   color: #ffffff;
   font-weight: normal;
+}
+
+/* Contenedor con borde para hospedadores disponibles */
+.bordered-container {
+  border: 1px solid #ccc; /* Agrega un borde suave alrededor del contenedor */
+  border-radius: 10px; /* Para bordes redondos */
+  margin-top: 1rem;
+  padding: 1rem; /* Espaciado interno para separar hospedadores del borde */
+  background-color: #f9f9f9; /* Fondo de color gris claro */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+/* Estilos para el título "Hospedadores Disponibles" */
+.bordered-container h3 {
+  margin: 0; /* Elimina el margen superior del título */
+  padding-bottom: 1rem; /* Espacio entre el título y la lista */
 }

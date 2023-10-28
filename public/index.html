@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Proyecto Visitas</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
   <!-- Agrega un archivo CSS para estilos -->
   <!-- Asegúrate de que la fuente "Lato" se esté cargando en tu proyecto (por ejemplo, desde Google Fonts) -->
 </head>
@@ -25,10 +28,16 @@
         <p><strong>Nombre:</strong> <span id="Nombre"></span></p>
         <p><strong>Zona:</strong> <span id="Zona"></span></p>
         <p><strong>Hospedador:</strong> <span id="Hospedador"></span></p>
-        <div id="hospedajesList">
-          <h3>Hospedajes Disponibles</h3>
+        </div>
+      
+          <!-- Lista de hospedadores -->
+          <div class="bordered-container">
+            <h3>Hospedajes Disponibles</h3>
+            <div id="hospedajesList">
           <!-- Hospedajes se llenarán dinámicamente aquí -->
         </div>
+
+
       </div>
       <button id="asignarVisitaBtn" class="button">Asignar Visita</button>
       <!-- Agrega la clase "button" para los estilos del botón -->

@@ -38,14 +38,19 @@ h1, h2, h3 {
 /* Sección de visitas */
 #visitas-section {
   background-color: #fff;
-  max-width: 800px;
-  margin: 2rem auto;
+  width: 50%;
+  margin:  0 auto 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: normal;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);;
+  margin-bottom: 1rem; /* Aumenta el margen inferior a 1rem */
 }
 
 /* Select de visitas */
@@ -140,4 +145,53 @@ h1, h2, h3 {
 .bordered-container h3 {
   margin: 0; /* Elimina el margen superior del título */
   padding-bottom: 1rem; /* Espacio entre el título y la lista */
+}
+
+
+/* Estilos de las pestañas */
+.tabs-container {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 1rem 0; /* Reduzco el margen superior e inferior a 1rem */
+  height: calc(100vh - 10rem); /* Reduzco la altura máxima restando 2rem */
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  width: 200px;
+  max-height: 100%;
+}
+
+.tab {
+  padding: 1rem;
+  align-items: center;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  text-align: center;
+  background-color: #d9d9d9;
+  margin: 0;
+  border-radius: 5px; /* Añade bordes redondos */
+  margin-bottom: 5px; /* Separación entre botones de pestañas */
+  font-family: 'Tajawal', sans-serif;
+}
+
+.tab-icon {
+  margin-right: 10px; /* Espacio entre el ícono y el texto */
+}
+
+.tab-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
+
+/* Estilo de pestaña activa */
+.tab.active {
+  background-color: #007bff;
+  color: #fff;
 }

@@ -8,43 +8,44 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300&display=swap" rel="stylesheet">
-  <!-- Agrega un archivo CSS para estilos -->
-  <!-- Asegúrate de que la fuente "Lato" se esté cargando en tu proyecto (por ejemplo, desde Google Fonts) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
   <header>
     <h1 class="title">Proyecto de Visitas</h1>
-    <!-- Agrega un menú de navegación si es necesario -->
   </header>
   <main>
-    <section id="visitas-section">
-      <h2>Visitas</h2>
-      <select id="visitaId" class="listbox"></select>
-
-
-      <!-- Aplica el estilo listbox -->
-      <div id="visita-details">
-        <h3>Detalles de la Visita</h3>
-        <p><strong>Nombre:</strong> <span id="Nombre"></span></p>
-        <p><strong>Zona:</strong> <span id="Zona"></span></p>
-        <p><strong>Hospedador:</strong> <span id="Hospedador"></span></p>
-        </div>
-      
-          <!-- Lista de hospedadores -->
+    <div class="tabs-container">
+      <div class="tabs">
+        <div class="tab" id="tabAsignacion"><span class="tab-icon"><i class="fas fa-user-friends"></i></span> Asignación de Visitas</div>
+        <div class="tab" id="tabInformacion"><span class="tab-icon"><i class="fas fa-info-circle"></i></span> Información de Visitas</div>
+      </div>
+      <div class="tab-content" id="contentAsignacion">
+        <section id="visitas-section">
+          <h2>Visitas</h2>
+          <select id="visitaId" class="listbox"></select>
+          <div id="visita-details">
+            <h3>Detalles de la Visita</h3>
+            <p><strong>Nombre:</strong> <span id="Nombre"></span></p>
+            <p><strong>Zona:</strong> <span id="Zona"></span></p>
+            <p><strong>Hospedador:</strong> <span id="Hospedador"></span></p>
+          </div>
           <div class="bordered-container">
             <h3>Hospedajes Disponibles</h3>
             <div id="hospedajesList">
-          <!-- Hospedajes se llenarán dinámicamente aquí -->
-        </div>
-
-
+              <!-- Hospedajes se llenarán dinámicamente aquí -->
+            </div>
+          </div>
+          <button id="asignarVisitaBtn" class="button">Asignar Visita</button>
+          <div id="mensaje" class="mensaje"></div>
+        </section>
       </div>
-      <button id="asignarVisitaBtn" class="button">Asignar Visita</button>
-      <!-- Agrega la clase "button" para los estilos del botón -->
-      <div id="mensaje" class="mensaje"></div>
-    </section>
+      <div class="tab-content" id="contentInformacion">
+        <!-- Contenido de la pestaña "Información de Visitas" -->
+        <!-- Agrega contenido específico de la segunda pestaña aquí -->
+      </div>
+    </div>
   </main>
   <script src="script.js"></script>
-  <!-- Agrega el archivo JavaScript -->
 </body>
 </html>

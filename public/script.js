@@ -5,9 +5,38 @@ document.addEventListener('DOMContentLoaded', () => {
   const hospedador = document.getElementById('Hospedador');
   const hospedajesList = document.getElementById('hospedajesList');
   const asignarVisitaBtn = document.getElementById('asignarVisitaBtn');
- 
+  const tabAsignacion = document.getElementById('tabAsignacion');
+  const tabInformacion = document.getElementById('tabInformacion');
+  const contentAsignacion = document.getElementById('contentAsignacion');
+  const contentInformacion = document.getElementById('contentInformacion');
 
+  // Establecer la pestaña "Asignación de Visitas" como activa por defecto
+  tabAsignacion.classList.add('active');
+  contentAsignacion.style.display = 'block';
 
+    // Función para alternar entre pestañas
+    const changeTab = (selectedTab) => {
+      if (selectedTab === 'Asignacion') {
+        tabAsignacion.classList.add('active');
+        tabInformacion.classList.remove('active');
+        contentAsignacion.style.display = 'block';
+        contentInformacion.style.display = 'none';
+      } else if (selectedTab === 'Informacion') {
+        tabAsignacion.classList.remove('active');
+        tabInformacion.classList.add('active');
+        contentAsignacion.style.display = 'none';
+        contentInformacion.style.display = 'block';
+      }
+    };
+    
+  // Event listeners para cambiar entre pestañas
+  tabAsignacion.addEventListener('click', () => {
+    changeTab('Asignacion');
+  });
+
+  tabInformacion.addEventListener('click', () => {
+    changeTab('Informacion');
+  });
 
   // Función para cargar las visitas iniciales al listbox y mostrar "Seleccione una visita"
   const cargarVisitas = () => {

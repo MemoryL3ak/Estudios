@@ -13,23 +13,31 @@
 <body>
   <header>
     <h1 class="title">Proyecto de Visitas</h1>
+    <!-- Agrega un menú de navegación si es necesario -->
   </header>
   <main>
     <div class="tabs-container">
       <div class="tabs">
-        <div class="tab" id="tabAsignacion"><span class="tab-icon"><i class="fas fa-user-friends"></i></span> Asignación de Visitas</div>
-        <div class="tab" id="tabInformacion"><span class="tab-icon"><i class="fas fa-info-circle"></i></span> Información de Visitas</div>
+        <div class="tab" id="tabAsignacion">
+          <i class="fas fa-users tab-icon"></i> Asignación de Visitas
+        </div>
+        <div class="tab" id="tabInformacion">
+          <i class="fas fa-info-circle tab-icon"></i> Información de Visitas
+        </div>
       </div>
       <div class="tab-content" id="contentAsignacion">
+        <!-- Contenido de la pestaña "Asignación de Visitas" -->
         <section id="visitas-section">
           <h2>Visitas</h2>
           <select id="visitaId" class="listbox"></select>
+          <!-- Aplica el estilo listbox -->
           <div id="visita-details">
             <h3>Detalles de la Visita</h3>
             <p><strong>Nombre:</strong> <span id="Nombre"></span></p>
             <p><strong>Zona:</strong> <span id="Zona"></span></p>
             <p><strong>Hospedador:</strong> <span id="Hospedador"></span></p>
           </div>
+          <!-- Lista de hospedadores -->
           <div class="bordered-container">
             <h3>Hospedajes Disponibles</h3>
             <div id="hospedajesList">
@@ -37,15 +45,17 @@
             </div>
           </div>
           <button id="asignarVisitaBtn" class="button">Asignar Visita</button>
+          <!-- Agrega la clase "button" para los estilos del botón -->
           <div id="mensaje" class="mensaje"></div>
         </section>
       </div>
       <div class="tab-content" id="contentInformacion">
         <!-- Contenido de la pestaña "Información de Visitas" -->
-        <!-- Agrega contenido específico de la segunda pestaña aquí -->
+        <!-- Aquí puedes agregar contenido específico de la segunda pestaña -->
       </div>
     </div>
   </main>
   <script src="script.js"></script>
+  <!-- Agrega el archivo JavaScript -->
 </body>
 </html>

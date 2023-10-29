@@ -20,8 +20,10 @@ body {
   padding: 0;
   color: #474747;
   font-weight: normal;
-  max-height: 10%; /* Establezco una altura máxima en relación al tamaño de la ventana */
-  overflow-y: auto; /* Agrego desplazamiento vertical si el contenido es demasiado alto */
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
+  min-height: 100vh; /* Establece una altura mínima del viewport del navegador */
+
 }
 
 /* Encabezado de la página */
@@ -40,9 +42,9 @@ h1, h2, h3 {
 /* Sección de visitas */
 #visitas-section {
   background-color: #fff;
-  width: 100%;
+  width: 90%; /* Cambia el ancho al 90% (puedes ajustar el valor según tus necesidades) */
   max-width: 800px;
-  margin:  0 auto 1rem;
+  margin: 1rem auto; /* Margen superior 1rem, margen inferior 1rem */
   padding: 1rem;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -52,9 +54,9 @@ h1, h2, h3 {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);;
-  margin-bottom: 1rem; /* Aumenta el margen inferior a 1rem */
+  transform: translate(-50%, -50%);
 }
+
 
 /* Select de visitas */
 #visitaId {
@@ -153,38 +155,40 @@ h1, h2, h3 {
 
 /* Estilos de las pestañas */
 .tabs-container {
-  display: flex;
+  display: grid;
   border: 1px solid #ccc;
   border-radius: 10px;
   overflow: hidden;
   max-width: 100%;
   margin: 1rem 0; 
-  height: calc(100vh - 10rem); 
-  max-height: calc(100vh - 10rem);
+  max-height: 100px;
+ /*  max-height: calc(100vh - 2rem);*/
 }
 
 .tabs {
-  display: flex;
-  flex-direction: column;
   background-color: #f4f4f4;
-  width: 200px;
-  max-height: 100%;
-  overflow-y: auto;
+  display: flex;
+  justify-content: space-between; /* Alinea los botones a los extremos */
+  align-items: center; /* Alinea verticalmente los elementos en el centro */
+  padding: 1rem;
+  border-right: 1px solid #ccc;
+  overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
+  
 }
 
 .tab {
+  display: flex;
+  align-items: center;
   padding: 1rem;
-  align-items: flex;
   cursor: pointer;
   border-bottom: 1px solid #ccc;
   font-weight: bold;
-  text-align: center;
+  text-align: left;
   background-color: #d9d9d9;
   margin: 0;
-  border-radius: 5px; /* Añade bordes redondos */
-  margin-bottom: 5px; /* Separación entre botones de pestañas */
+  border-radius: 5px;
+  margin-bottom: 5px;
   font-family: 'Tajawal', sans-serif;
- 
 }
 
 .tab-icon {

@@ -208,3 +208,13 @@ h1, h2, h3 {
   background-color: #007bff;
   color: #fff;
 }
+
+/* Agrega esta regla CSS para establecer la fuente Tajawal en la tabla */
+#contentInformacion {
+  font-family: 'Tajawal', sans-serif;
+}
+
+/* Agrega esta regla CSS para establecer la fuente Tajawal en el título "Información de Visitas" */
+#informacion-titulo {
+  font-family: 'Tajawal', sans-serif;
+}

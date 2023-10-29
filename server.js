@@ -123,3 +123,21 @@ app.post('/asignar-visita/:visitaId/:hospedajeId', async (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor en ejecución en el puerto ${port}`);
 });
+
+
+//Ruta información de visitas
+
+app.get('/informacion-visitas', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const query = 'SELECT * FROM visitas'; // Selecciona todos los campos de la tabla "visitas"
+    const { rows } = await client.query(query);
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al consultar la base de datos' });
+  } finally {
+    await client.end();
+  }
+});

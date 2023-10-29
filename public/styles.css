@@ -20,6 +20,8 @@ body {
   padding: 0;
   color: #474747;
   font-weight: normal;
+  max-height: 10%; /* Establezco una altura máxima en relación al tamaño de la ventana */
+  overflow-y: auto; /* Agrego desplazamiento vertical si el contenido es demasiado alto */
 }
 
 /* Encabezado de la página */
@@ -38,7 +40,8 @@ h1, h2, h3 {
 /* Sección de visitas */
 #visitas-section {
   background-color: #fff;
-  width: 50%;
+  width: 100%;
+  max-width: 800px;
   margin:  0 auto 1rem;
   padding: 1rem;
   border: 1px solid #ccc;
@@ -155,8 +158,9 @@ h1, h2, h3 {
   border-radius: 10px;
   overflow: hidden;
   max-width: 100%;
-  margin: 1rem 0; /* Reduzco el margen superior e inferior a 1rem */
-  height: calc(100vh - 10rem); /* Reduzco la altura máxima restando 2rem */
+  margin: 1rem 0; 
+  height: calc(100vh - 10rem); 
+  max-height: calc(100vh - 10rem);
 }
 
 .tabs {
@@ -165,11 +169,12 @@ h1, h2, h3 {
   background-color: #f4f4f4;
   width: 200px;
   max-height: 100%;
+  overflow-y: auto;
 }
 
 .tab {
   padding: 1rem;
-  align-items: center;
+  align-items: flex;
   cursor: pointer;
   border-bottom: 1px solid #ccc;
   font-weight: bold;
@@ -179,6 +184,7 @@ h1, h2, h3 {
   border-radius: 5px; /* Añade bordes redondos */
   margin-bottom: 5px; /* Separación entre botones de pestañas */
   font-family: 'Tajawal', sans-serif;
+ 
 }
 
 .tab-icon {

@@ -1,8 +1,10 @@
 
 
 @media (max-width: 768px) {
-  /* Estilos para pantallas pequeñas */
-  /* Aquí puedes ajustar tamaños de fuente, márgenes y otros estilos para pantallas móviles */
+  #visitas-section {
+    max-height: 50vh; /* Establece el alto máximo en el 50% del viewport en pantallas pequeñas */
+    overflow-y: auto; /* Agrega una barra de desplazamiento si el contenido es demasiado largo */
+  }
 }
 
 
@@ -51,10 +53,11 @@ h1, h2, h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
   font-weight: normal;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  
+  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
+  align-items: center; /* Centra horizontalmente el contenido */
+
+
 }
 
 
@@ -161,8 +164,8 @@ h1, h2, h3 {
   overflow: hidden;
   max-width: 100%;
   margin: 1rem 0; 
-  max-height: 100px;
- /*  max-height: calc(100vh - 2rem);*/
+  max-height: calc(100vh - 100px); /* Resta el espacio ocupado por el título "Proyecto de Visitas" */
+  overflow: auto; /* Agrega barras de desplazamiento si es necesario */
 }
 
 .tabs {

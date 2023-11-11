@@ -1,0 +1,96 @@
+/* Reset básico y estilos generales */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tajawal', sans-serif;
+}
+
+body {
+  background: #edf2f7; /* Un fondo más claro para un diseño más fresco */
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background: #007bff; /* Un azul más brillante y moderno */
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  border-bottom: 5px solid #0056b3; /* Añade un borde para un toque de diseño */
+}
+
+.main {
+  max-width: 60%; /* Un ancho más estrecho para centrar la atención */
+  margin: 40px auto; /* Más espacio alrededor del contenedor */
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px; /* Bordes más redondeados para un look moderno */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Una sombra más pronunciada para un efecto 3D suave */
+}
+
+/* Estilos para las pestañas */
+.tab {
+  display: inline-block;
+  background-color: #e2e6ea; /* Un color más suave para las pestañas no activas */
+  margin-right: 10px;
+  padding: 10px 20px;
+  font-size: 16px; /* Tamaño de letra más grande para facilidad de lectura */
+  font-weight: 500; /* Peso de fuente menos bold para modernidad */
+  color: #007bff; /* Color que resalta sobre el fondo más suave */
+  border-radius: 50px; /* Bordes muy redondeados para un estilo moderno */
+  transition: background-color 0.3s, transform 0.3s; /* Suaviza la transición y añade un efecto de escalado */
+  cursor: pointer;
+}
+
+.tab.active, .tab:hover {
+  background-color: #007bff;
+  color: #fff;
+  transform: scale(1.05); /* Escala ligeramente el tab para indicar activación o hover */
+}
+
+/* Estilos para el contenido de las pestañas */
+.tab-content {
+  display: none;
+  padding: 20px;
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.05);
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* Estilos para elementos de formulario y botones */
+.listbox, .button {
+  width: 100%; /* Ajuste para que ocupe todo el espacio disponible */
+  padding: 15px;
+  margin: 10px 0;
+  border: none; /* Sin bordes para un estilo limpio */
+  border-radius: 50px; /* Bordes muy redondeados */
+  background: #e2e6ea; /* Un fondo suave para el input */
+  color: #333;
+  font-size: 18px; /* Aumenta el tamaño de la fuente para mayor presencia */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+}
+
+.button {
+  background-color: #28a745; /* Color verde para acciones positivas como 'Asignar Visita' */
+  color: white;
+  margin-top: 20px; /* Más espacio antes del botón */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.button:hover {
+  background-color: #218838; /* Un verde más oscuro al pasar el mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada para efecto al pasar el mouse */
+}
+
+/* Estilos para mensajes de feedback */
+.mensaje {
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 50px
+}

@@ -1,220 +1,162 @@
-
-
-@media (max-width: 768px) {
-  #visitas-section {
-    max-height: 50vh; /* Establece el alto máximo en el 50% del viewport en pantallas pequeñas */
-    overflow-y: auto; /* Agrega una barra de desplazamiento si el contenido es demasiado largo */
-  }
-}
-
-
-/* Aplicar la fuente Tajawal a todos los elementos */
-body, h1, h2, h3, p, select, button {
-  font-family: 'Tajawal', sans-serif;
-}
-
-
-/* Estilos generales para el cuerpo de la página */
-body {
-  font-family: 'Lato', Arial, sans-serif;
-  background-color: #f4f4f4;
+/* Reset básico y estilos generales */
+* {
   margin: 0;
   padding: 0;
-  color: #474747;
-  font-weight: normal;
-  display: flex;
-  flex-direction: column; /* Asegura que los elementos se apilen verticalmente */
-  min-height: 100vh; /* Establece una altura mínima del viewport del navegador */
-
+  box-sizing: border-box;
 }
 
-/* Encabezado de la página */
+body {
+  font-family: 'Tajawal', sans-serif;
+  background: #edf2f7;
+  color: #333;
+  line-height: 1.6;
+}
+
 header {
-  background-color: #007bff;
+  background: #007bff;
   color: #fff;
+  padding: 20px 0;
   text-align: center;
-  padding: 1rem;
+  border-bottom: 5px solid #0056b3;
 }
 
-/* Encabezados de sección */
-h1, h2, h3 {
-  margin: 1rem 0;
-}
-
-/* Sección de visitas */
-#visitas-section {
-  background-color: #fff;
-  width: 90%; /* Cambia el ancho al 90% (puedes ajustar el valor según tus necesidades) */
-  max-width: 800px;
-  margin: 1rem auto; /* Margen superior 1rem, margen inferior 1rem */
-  padding: 1rem;
-  border: 1px solid #ccc;
+.main {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-weight: normal;
-  
-  flex-direction: column; /* Asegura que el contenido se apile verticalmente */
-  align-items: center; /* Centra horizontalmente el contenido */
-
-
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Select de visitas */
-#visitaId {
-  width: 100%;
-  padding: 0.7rem;
-  margin: 0.5rem 0;
-  font-size: 1rem;
-  font-family: 'Tajawal', sans-serif;
-  border: 1px solid #ccc; /* Agregar bordes suaves al listbox */
-  border-radius: 10px;
-  font-weight: normal; /* Establecer el tipo de letra como no negrita */
-  font-family: Arial, sans-serif; /* Cambiar la fuente a Arial */
-  font-weight: normal;
-}
-
-#visitaId option {
-  background-color: #fff; /* Fondo blanco */
-  color: #000; /* Texto negro */
-  font-weight: normal; /* Fuente no negrita */
-  font-family: 'Tajawal', sans-serif;
-
-}
-
-
-/* Detalles de visita */
-#visita-details, .bordered-container {
-  margin-top: 1rem;
-  padding: 1rem;
-  background-color: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  font-weight: normal;
-}
-
-
-#visita-details h3{
-  font-size: 1.25rem;
-  margin-bottom: 10px; /* Ajusta el margen inferior del título "Detalles de la Visita" */
-  margin-top: 0;
-}
-
-#visita-details p, .bordered-container {
-  margin: 5px 0; /* Ajusta el margen superior e inferior de los párrafos */
-}
-
-/* Lista de hospedajes */
-#hospedajesList {
-  margin-top: 1rem;
-  font-family: 'Tajawal', sans-serif;
-
-}
-
-/* Botón de asignar visita */
-#asignarVisitaBtn {
-  background-color: #007bff;
-  color: #fff;
-  padding: 0.8rem 1.6rem;
-  font-size: 1.1rem;
-  border: none;
-  cursor: pointer;
-  margin-top: 2rem; /* Ajustar margen superior para separar del rectángulo de detalles */
-  border-radius: 5px; /* Agregar bordes redondos al botón */
-  font-family: 'Tajawal', sans-serif;
-  font-weight: bold; /* Establecer el tipo de letra como no negrita */
-}
-
-/* Mensaje emergente */
-.mensaje {
-  display: none;
-  padding: 0.5rem;
-  margin-top: 1rem;
-  text-align: center;
-  border: 1px solid #ccc;
-  background-color: #76e476;
-  border-radius: 10px;
-  color: #ffffff;
-  font-weight: normal;
-}
-
-/* Contenedor con borde para hospedadores disponibles */
-.bordered-container {
-  border: 1px solid #ccc; /* Agrega un borde suave alrededor del contenedor */
-  border-radius: 10px; /* Para bordes redondos */
-  margin-top: 1rem;
-  padding: 1rem; /* Espaciado interno para separar hospedadores del borde */
-  background-color: #f9f9f9; /* Fondo de color gris claro */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-/* Estilos para el título "Hospedadores Disponibles" */
-.bordered-container h3 {
-  margin: 0; /* Elimina el margen superior del título */
-  padding-bottom: 1rem; /* Espacio entre el título y la lista */
-}
-
-
-/* Estilos de las pestañas */
 .tabs-container {
-  display: grid;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 1rem 0; 
-  max-height: calc(100vh - 100px); /* Resta el espacio ocupado por el título "Proyecto de Visitas" */
-  overflow: auto; /* Agrega barras de desplazamiento si es necesario */
-}
-
-.tabs {
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: space-between; /* Alinea los botones a los extremos */
-  align-items: center; /* Alinea verticalmente los elementos en el centro */
-  padding: 1rem;
-  border-right: 1px solid #ccc;
-  overflow-y: auto; /* Agrega una barra de desplazamiento si es necesario */
-  
+  text-align: center;
 }
 
 .tab {
-  display: flex;
-  align-items: center;
-  padding: 1rem;
+  display: inline-block;
+  background-color: #e2e6ea;
+  margin: 0 10px;
+  padding: 15px 30px; /* Aumento del padding para hacer el botón más grande */
+  font-size: 18px; /* Aumento del tamaño de la fuente de los botones */
+  font-weight: 500;
+  color: #007bff;
+  border-radius: 50px;
   cursor: pointer;
-  border-bottom: 1px solid #ccc;
-  font-weight: bold;
-  text-align: left;
-  background-color: #d9d9d9;
-  margin: 0;
-  border-radius: 5px;
-  margin-bottom: 5px;
-  font-family: 'Tajawal', sans-serif;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.tab-icon {
-  margin-right: 10px; /* Espacio entre el ícono y el texto */
-}
-
-.tab-content {
-  padding: 1rem;
-  flex-grow: 1;
-}
-
-/* Estilo de pestaña activa */
-.tab.active {
-  background-color: #007bff;
+.tab.active, .tab:hover {
+  background-color: #0056b3;
   color: #fff;
+  transform: scale(1.1); /* Aumento leve del efecto de escala para mayor realce */
 }
 
-/* Agrega esta regla CSS para establecer la fuente Tajawal en la tabla */
-#contentInformacion {
-  font-family: 'Tajawal', sans-serif;
+.content-container {
+  max-width: 800px;
+  margin: 30px auto;
 }
 
-/* Agrega esta regla CSS para establecer la fuente Tajawal en el título "Información de Visitas" */
-#informacion-titulo {
-  font-family: 'Tajawal', sans-serif;
+/* Estilos para los campos de formulario y botones dentro de content-container */
+.content-container .listbox {
+  width: 100%;
+  padding: 15px; /* Disminución del padding para un tamaño más pequeño */
+  margin: 10px 0; /* Ajuste del margen para más espacio entre elementos */
+  border: 2px solid #0056b3;
+  border-radius: 50px;
+  background: #e2e6ea;
+  color: #333;
+  font-size: 16px; /* Disminución del tamaño de la fuente para el listbox */
 }
+
+.content-container .button {
+  width: 100%;
+  padding: 20px;
+  margin: 20px 0 30px; /* Aumento del margen inferior para más espacio */
+  border: none;
+  border-radius: 50px;
+  background-color: #28a745; /* Color verde para el botón 'Asignar Visita' */
+  color: white;
+  font-size: 20px; /* Aumento del tamaño de la fuente para mayor legibilidad */
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.content-container .button:hover {
+  background-color: #218838;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajustes para los detalles de la visita y hospedajes disponibles */
+#visita-details h3,
+.bordered-container h3 {
+  text-align: center; /* Alineación de texto centrada para los títulos */
+  font-size: 24px; /* Tamaño de fuente existente */
+  font-weight: bold; 
+}
+#visita-details p {
+  font-size: 20px; /* Tamaño de la fuente para los párrafos */
+
+}
+
+.bordered-container div {
+  font-size: 20px; /* Aumento del tamaño de la fuente para estas secciones */
+}
+
+.bordered-container {
+  margin-top: 50px; /* Aumento del margen superior para la sección 'Hospedajes Disponibles' */
+}
+
+.content-container .mensaje {
+  color: green;
+  background-color: #bce7c6;
+  padding: 10px;
+  margin: 20px 0;
+  border-radius: 50px;
+  font-size: 16px;
+  text-align: center;
+}
+#informacion-titulo h4 {
+  font-size: 24px; /* Tamaño de fuente aumentado */
+  font-weight: bold; /* Si también deseas que esté en negrita */
+  text-align: center; /* Centrar si es necesario */
+  /* Añade otros estilos como margin, padding, etc., si se requiere */
+}
+
+/* Aumentar el tamaño de la fuente del contenido de la tabla dentro de "Información de Visitas" */
+#contentInformacion table {
+  border-collapse: separate; /* Asegúrate de que las celdas se traten como separadas */
+  border-spacing: 10px; /* Aumenta el espaciado entre celdas */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#contentInformacion th,
+#contentInformacion td {
+  font-size: 20px; /* Elige el tamaño de fuente que prefieras */
+  padding: 5px;
+}
+
+/* ... resto del código ... */
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+  .main {
+    width: 95%;
+  }
+
+  .content-container {
+    width: 95%;
+  }
+
+  .tab {
+    padding: 12px 25px; /* Ajuste del padding para botones más pequeños en pantallas más pequeñas */
+    font-size: 16px; /* Ajuste del tamaño de la fuente para legibilidad en pantallas más pequeñas */
+  }
+
+  .content-container .listbox,
+  .content-container .button {
+    font-size: 18px; /* Ajuste del tamaño de la fuente en pantallas más pequeñas */
+  } /* Aquí faltaba cerrar la llave */
+}
+
+

@@ -125,14 +125,14 @@ header {
 /* Aumentar el tamaño de la fuente del contenido de la tabla dentro de "Información de Visitas" */
 #contentInformacion table {
   border-collapse: separate; /* Asegúrate de que las celdas se traten como separadas */
-  border-spacing: 12px; /* Aumenta el espaciado entre celdas */
+  border-spacing: 15px; /* Aumenta el espaciado entre celdas */
   margin-left: auto;
   margin-right: auto;
 }
 
 #contentInformacion th,
 #contentInformacion td {
-  font-size: 20px; /* Elige el tamaño de fuente que prefieras */
+  font-size: 18px; /* Elige el tamaño de fuente que prefieras */
   padding: 5px;
 }
 

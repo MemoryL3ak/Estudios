@@ -13,11 +13,64 @@ body {
 }
 
 header {
-  background: #007bff;
+
   color: #fff;
-  padding: 20px 0;
-  text-align: center;
-  border-bottom: 5px solid #0056b3;
+  padding: 20px;
+  display: flex; /* Utiliza flexbox para alinear elementos horizontalmente */
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  justify-content: flex-start; /* Alinea horizontalmente los elementos al inicio */
+  gap: 20px; /* Espacio entre los elementos del header */
+
+}
+
+
+.title {
+  position: relative; /* Posición relativa para posicionar la franja absolutamente */
+  display: inline-block; /* Hace que el título se comporte como un bloque en línea */
+}
+
+
+
+.title::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: -25px;
+  width: 100vw;
+  height: 3px;
+  background-color: #007bff;
+
+}
+
+.header-left, header {
+  position: relative;
+}
+
+.header-left, .header-right {
+  display: flex;
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
+  gap: 20px; /* Espacio entre logo y título, y entre tabs */
+}
+
+
+.logo {
+  height: 60px; /* Ajusta el alto de la imagen según sea necesario */
+ 
+  
+
+}
+
+
+/* Estilo para el título dentro del header para moverlo a la izquierda */
+.title {
+  font-size: 30px; /* Incrementa el tamaño del título */
+  font-weight: bold;
+   /* Asegura que el título tenga espacio a la izquierda */
+  font-style: italic;
+  color: #007bff;
+  margin: 0;
+
 }
 
 .main {
@@ -30,7 +83,8 @@ header {
 }
 
 .tabs-container {
-  text-align: center;
+  display: flex; /* Habilita flexbox para las pestañas */
+  align-items: center; /* Alinea los elementos verticalmente en el centro */
 }
 
 .tab {
@@ -44,7 +98,14 @@ header {
   border-radius: 50px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.3s;
+  margin-left: 50px;
+
 }
+
+
+
+
+
 
 .tab.active, .tab:hover {
   background-color: #0056b3;
@@ -79,6 +140,7 @@ header {
   color: white;
   font-size: 20px; /* Aumento del tamaño de la fuente para mayor legibilidad */
   transition: background-color 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
 .content-container .button:hover {

@@ -141,3 +141,21 @@ app.get('/informacion-visitas', async (req, res) => {
     await client.end();
   }
 });
+
+//Ruta información de hospedajes
+
+app.get('/informacion-hospedajes', async (req, res) => {
+  const client = new Client(dbConfig);
+  try {
+    await client.connect();
+    const query = 'SELECT * FROM hospedajes'; // Selecciona todos los campos de la tabla "hospedajes"
+    const { rows } = await client.query(query);
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Error al consultar la base de datos' });
+  } finally {
+    await client.end();
+  }
+});
+

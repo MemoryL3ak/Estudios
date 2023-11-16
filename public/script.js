@@ -11,8 +11,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const contentInformacion = document.getElementById('contentInformacion');
   const informacionVisitasContainer = document.getElementById('informacion-visitas');
   const tituloInformacion = document.getElementById('informacion-titulo');
+  const tabHospedaje = document.getElementById('tabHospedaje');
+  const contentHospedaje = document.getElementById('contentHospedaje');
+  const informacionHospedajesContainer = document.getElementById('informacion-hospedajes');
 
 
+
+  contentHospedaje.style.display = 'none';
 
   // Establecer la pestaña "Asignación de Visitas" como activa por defecto
   tabAsignacion.classList.add('active');
@@ -20,6 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Función para alternar entre pestañas
     const changeTab = (selectedTab) => {
+      tabAsignacion.classList.remove('active');
+      tabInformacion.classList.remove('active');
+      tabHospedaje.classList.remove('active');
+      contentAsignacion.style.display = 'none';
+      contentInformacion.style.display = 'none';
+      contentHospedaje.style.display = 'none';
+    
       if (selectedTab === 'Asignacion') {
         tabAsignacion.classList.add('active');
         tabInformacion.classList.remove('active');
@@ -30,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         tabInformacion.classList.add('active');
         contentAsignacion.style.display = 'none';
         contentInformacion.style.display = 'block';
+      } else if (selectedTab === 'Hospedaje') {
+        tabHospedaje.classList.add('active');
+        contentHospedaje.style.display = 'block';
+
       }
     };
 
@@ -44,6 +60,14 @@ document.addEventListener('DOMContentLoaded', () => {
     mostrarTituloInformacionVisitas();
     cargarInformacionVisitas();
   });
+
+  tabHospedaje.addEventListener('click', () => {
+    changeTab('Hospedaje');
+    cargarInformacionHospedajes();
+  });
+  
+
+
 
   // Función para cargar las visitas iniciales al listbox y mostrar "Seleccione una visita"
   const cargarVisitas = () => {
@@ -295,6 +319,8 @@ function actualizarHospedador(visitaId) {
       
         // Llama a la función para mostrar u ocultar el título en la carga inicial
         mostrarTituloInformacionVisitas(tabInformacion.classList.contains('active'));
+
+        
       
         // Event listeners para cambiar entre pestañas
         tabAsignacion.addEventListener('click', () => {
@@ -307,6 +333,44 @@ function actualizarHospedador(visitaId) {
           mostrarTituloInformacionVisitas(true); // Muestra el título
           cargarInformacionVisitas();
         });
+
+
+
+        // Función para cargar y mostrar los datos de visitas
+      const cargarInformacionHospedajes = () => {
+        fetch('/informacion-hospedajes')
+          .then((response) => response.json())
+          .then((data) => {
+
+            data.sort((a, b) => a.IDHospedaje - b.IDHospedaje);
+
+            // Construye una tabla HTML para mostrar los datos
+            const tablaHTML = `
+              <table>
+                <tr>
+                  <th>IDHospedaje</th>
+                  <th>Nombre</th>
+                  <th>Zona</th>
+                  <th>Visita</th>
+                </tr>
+                ${data.map((hospedaje) => `
+                  <tr>
+                    <td>${hospedaje.IDHospedaje}</td>
+                    <td>${hospedaje.Nombre}</td>
+                    <td>${hospedaje.Zona}</td>
+                    <td>${hospedaje.Visita}</td>
+                  </tr>`).join('')}
+              </table>
+            `;
+    
+            informacionHospedajesContainer.innerHTML = tablaHTML;
+          })
+          .catch((error) => {
+            console.error(error);
+            informacionHospedajesContainer.innerHTML = 'Error al cargar la información de visitas.';
+          });
+      };
+
       
       
       });

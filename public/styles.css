@@ -118,6 +118,10 @@ header {
   margin: 30px auto;
 }
 
+.content-container h2 {
+  text-align: center; /* Centra el texto */
+  /* Otros estilos que quieras aplicar */
+}
 /* Estilos para los campos de formulario y botones dentro de content-container */
 .content-container .listbox {
   width: 100%;
@@ -128,6 +132,7 @@ header {
   background: #e2e6ea;
   color: #333;
   font-size: 16px; /* Disminución del tamaño de la fuente para el listbox */
+  cursor: pointer;
 }
 
 .content-container .button {
@@ -184,18 +189,21 @@ header {
   /* Añade otros estilos como margin, padding, etc., si se requiere */
 }
 
+
+
 /* Aumentar el tamaño de la fuente del contenido de la tabla dentro de "Información de Visitas" */
-#contentInformacion table {
+#contentInformacion table,
+#contentHospedaje table {
   border-collapse: separate; /* Asegúrate de que las celdas se traten como separadas */
   border-spacing: 10px; /* Aumenta el espaciado entre celdas */
   margin-left: auto;
   margin-right: auto;
 }
 
-#contentInformacion th,
-#contentInformacion td {
-  font-size: 16px; /* Elige el tamaño de fuente que prefieras */
-  padding: 5px;
+#contentInformacion th, #contentInformacion td,
+#contentHospedaje th, #contentHospedaje td {
+  font-size: 20px; /* Elige el tamaño de fuente que prefieras */
+  padding: 10px;
 }
 
 /* ... resto del código ... */
